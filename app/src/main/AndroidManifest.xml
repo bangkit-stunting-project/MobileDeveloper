@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
+            android:name=".register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

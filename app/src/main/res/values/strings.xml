@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Anya</string>
+    <string name="textViewMasuk">MASUK</string>
+    <string name="email">Email</string>
+    <string name="sandi">Sandi</string>
+    <string name="textViewNavRegister">Belum punya akun? Buat disini</string>
+    <string name="textRegister">BUAT AKUN</string>
+    <string name="textHintName">Nama Lengkap</string>
+    <string name="tv_konfirmasi_sandi">Konfirmasi Sandi</string>
+    <string name="tv_berikutnya">BERIKUTNYA</string>
 </resources>
