@@ -17,4 +17,8 @@
         <item>Laki-Laki</item>
         <item>Perempuan</item>
     </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Kamera</string>
+    <string name="title_education">Edukasi</string>
 </resources>

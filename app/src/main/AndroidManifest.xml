@@ -10,6 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name=".register.Register2Activity"
             android:exported="false" />
         <activity
