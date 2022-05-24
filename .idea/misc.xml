@@ -14,10 +14,19 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_dashboard.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/dashboard_fragment.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/dropdown_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/fragment_camera.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/fragment_education.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/fragment_edukasi.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/fragment_home.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/fragment_profile.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/layout/profile_fragment.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

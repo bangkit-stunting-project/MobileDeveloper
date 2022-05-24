@@ -12,14 +12,20 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.capstone.anya.ui.dashboard.DashboardFragment"
+        android:id="@+id/navigation_camera"
+        android:name="com.capstone.anya.ui.camera.CameraFragment"
         android:label="@string/title_camera"
         tools:layout="@layout/fragment_camera" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.capstone.anya.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_education"
+        android:name="com.capstone.anya.ui.education.EducationFragment"
         android:label="@string/title_education"
-        tools:layout="@layout/fragment_edukasi" />
+        tools:layout="@layout/fragment_education" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.capstone.anya.ui.education.EducationFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
