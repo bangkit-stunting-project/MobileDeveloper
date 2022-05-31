@@ -22,4 +22,10 @@
     <string name="title_camera">Kamera</string>
     <string name="title_education">Edukasi</string>
     <string name="title_profile">Profile</string>
+    <string name="mon_child_status">Belum ada data anak</string>
+    <string name="mon_child_warning">Buat data anak terlebih dahulu</string>
+    <string name="child_image">Child Image</string>
+    <string name="create_data">Buat Data</string>
+    <string name="mon_mother_status">Belum ada data ibu</string>
+    <string name="mon_mother_warning">Buat data ibu terlebih dahulu</string>
 </resources>

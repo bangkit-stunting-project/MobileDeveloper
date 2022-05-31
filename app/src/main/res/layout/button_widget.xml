@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="129sp"
+    android:layout_height="42dp"
+    android:layout_gravity="center_horizontal"
+    style="@style/InterMedium"
+    android:textAllCaps="false"
+    android:textColor="@color/gray_800"
+    android:text="@string/create_data"/>
