@@ -11,4 +11,5 @@
     <color name="gray">#999999</color>
     <color name="gray_800">#212121</color>
     <color name="date">#716F6F</color>
+    <color name="border">#EBEBEB</color>
 </resources>
