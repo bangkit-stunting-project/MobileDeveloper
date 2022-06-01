@@ -1,4 +1,4 @@
-package com.capstone.anya
+package com.capstone.anya.main
 
 import android.Manifest
 import android.content.Context
@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.Toast
@@ -21,6 +22,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityMainBinding
 import com.capstone.anya.login.LoginActivity
 import com.capstone.anya.model.UserPreference
@@ -76,7 +78,10 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_camera, R.id.navigation_education, R.id.navigation_profile
+                R.id.navigation_home,
+                R.id.navigation_camera,
+                R.id.navigation_education,
+                R.id.navigation_profile
             )
         )
 
@@ -84,12 +89,12 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
-    companion object {
-        const val CAMERA_X_RESULT = 200
-
-        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
-        private const val REQUEST_CODE_PERMISSIONS = 10
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.item_main, menu)
+        return true
     }
+
 
 
     private fun setupView() {
@@ -111,15 +116,22 @@ class MainActivity : AppCompatActivity() {
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[MainViewModel::class.java]
 
-        mainViewModel.getToken().observe(this, { user ->
-            if (user.isLogin){
+        mainViewModel.getToken().observe(this) { user ->
+            if (user.isLogin) {
                 Toast.makeText(this@MainActivity, "You're Logged", Toast.LENGTH_SHORT).show()
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
-        })
+        }
 
+    }
+
+    companion object {
+        const val CAMERA_X_RESULT = 200
+
+        private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
+        private const val REQUEST_CODE_PERMISSIONS = 10
     }
 
 }

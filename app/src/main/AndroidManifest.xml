@@ -13,12 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
-            android:name=".MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             
@@ -33,7 +32,7 @@
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".CameraActivity"
+            android:name=".ui.camera.CameraActivity"
             android:exported="false"/>
     </application>
 

@@ -28,4 +28,6 @@
     <string name="create_data">Buat Data</string>
     <string name="mon_mother_status">Belum ada data ibu</string>
     <string name="mon_mother_warning">Buat data ibu terlebih dahulu</string>
+    <string name="notification">Notifikasi</string>
+    <string name="setting">Pengaturan</string>
 </resources>

@@ -11,11 +11,9 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.anya.MainActivity
-import com.capstone.anya.R
-import com.capstone.anya.ViewModelFactory
+import com.capstone.anya.main.MainActivity
+import com.capstone.anya.main.ViewModelFactory
 import com.capstone.anya.databinding.ActivityLoginBinding
-import com.capstone.anya.databinding.ActivityRegister2Binding
 import com.capstone.anya.model.UserPreference
 import com.capstone.anya.register.RegisterActivity
 

@@ -1,4 +1,4 @@
-package com.capstone.anya
+package com.capstone.anya.ui.camera
 
 import android.content.Intent
 import android.os.Build
@@ -13,6 +13,7 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import com.capstone.anya.createFile
 import com.capstone.anya.databinding.ActivityCameraBinding
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors

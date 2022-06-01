@@ -1,4 +1,4 @@
-package com.capstone.anya
+package com.capstone.anya.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

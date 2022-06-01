@@ -13,7 +13,7 @@
 
     <activity
         android:id="@+id/navigation_camera"
-        android:name="com.capstone.anya.CameraActivity"
+        android:name="com.capstone.anya.ui.camera.CameraActivity"
         android:label="@string/title_camera"
         tools:layout="@layout/activity_camera" />
 
