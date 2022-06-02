@@ -27,6 +27,10 @@ class ProfileFragment : Fragment() {
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
+//
+//        binding.buttonLogout.setOnClickListener {
+//            homeViewModel.logout()
+//        }
 
 
         return root

@@ -13,10 +13,6 @@ class MainViewModel(private val pref: UserPreference) : ViewModel() {
         return pref.getToken().asLiveData()
     }
 
-    fun logout() {
-        viewModelScope.launch {
-            pref.logout()
-        }
-    }
+
 
 }
