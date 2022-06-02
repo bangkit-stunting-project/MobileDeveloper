@@ -1,12 +1,10 @@
 package com.capstone.anya.ui.profile
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.capstone.anya.R
-import com.capstone.anya.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.anya.databinding.ActivityPersonaldataBinding
 
-class PersonaldataActivity : AppCompatActivity() {
+class PersonalDataActivity : AppCompatActivity() {
 
     private lateinit var bindingPersonalData: ActivityPersonaldataBinding
 

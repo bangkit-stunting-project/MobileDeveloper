@@ -31,4 +31,8 @@
     <string name="notification">Notifikasi</string>
     <string name="setting">Pengaturan</string>
     <string name="text_change">Change</string>
+    <string name="title_food">Makanan</string>
+    <string name="title_stunting">Stunting</string>
+    <string name="title_progress">Progress</string>
+    <string name="title_detail">Detail</string>
 </resources>

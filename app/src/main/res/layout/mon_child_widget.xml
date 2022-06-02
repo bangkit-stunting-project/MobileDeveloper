@@ -7,7 +7,6 @@
     android:layout_gravity="center_horizontal"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-    android:elevation="8dp"
     android:background="@drawable/shape"
     android:outlineProvider="bounds">
 
@@ -17,17 +16,16 @@
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
         app:srcCompat="@drawable/child"
-        android:elevation="8dp"
         android:contentDescription="@string/child_image" />
 
     <TextView
-        style="@style/InterSemiBold"
+        style="@style/Layout.InterSemiBold"
         android:textColor="@color/gray_800"
         android:gravity="center"
         android:text="@string/mon_child_status"/>
 
     <TextView
-        style="@style/InterRegular"
+        style="@style/Layout.InterRegular"
         android:textColor="@color/gray_800"
         android:gravity="center"
         android:layout_marginBottom="8dp"

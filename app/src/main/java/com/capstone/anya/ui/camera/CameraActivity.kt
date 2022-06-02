@@ -39,6 +39,7 @@ class CameraActivity : AppCompatActivity() {
             else CameraSelector.DEFAULT_BACK_CAMERA
             startCamera()
         }
+        binding.closeCamera.setOnClickListener{ finish() }
     }
 
     public override fun onResume() {

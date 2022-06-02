@@ -26,6 +26,7 @@ import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityMainBinding
 import com.capstone.anya.login.LoginActivity
 import com.capstone.anya.model.UserPreference
+import com.capstone.anya.ui.monitoring.child.ChildMonitoringActivity
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
 
@@ -62,7 +63,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupView()
         setupViewModel()
 
         if (!allPermissionsGranted()) {
@@ -87,27 +87,14 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        startActivity(Intent(this, ChildMonitoringActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.item_main, menu)
         return true
-    }
-
-
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-
     }
 
     private fun setupViewModel() {
