@@ -3,6 +3,7 @@
     package="com.capstone.anya">
 
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -13,14 +14,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
+            android:name=".ui.profile.PersonaldataActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.MainActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
         </activity>
         <activity
             android:name=".register.Register2Activity"
@@ -33,7 +36,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.camera.CameraActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

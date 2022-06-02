@@ -30,4 +30,5 @@
     <string name="mon_mother_warning">Buat data ibu terlebih dahulu</string>
     <string name="notification">Notifikasi</string>
     <string name="setting">Pengaturan</string>
+    <string name="text_change">Change</string>
 </resources>
