@@ -14,7 +14,9 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/drawable/ic_profile_outline.xml" value="0.1945" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/drawable/profile_selector.xml" value="0.1945" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/drawable/shape.xml" value="0.1945" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_child_monitoring.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_list_anak.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_main.xml" value="0.18" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_personaldata.xml" value="0.22" />
@@ -32,6 +34,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/mon_child_widget.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/menu/item_main.xml" value="0.18854166666666666" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/menu/list_anak.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/drawable-v24/ic_capture.xml" value="0.258" />
         <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.196" />
         <entry key="..\:/Users/kenji/OneDrive/Documents/GitHub/MobileDeveloper/app/src/main/res/drawable/camera_selector.xml" value="0.196" />

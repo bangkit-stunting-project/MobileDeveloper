@@ -14,9 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
-            android:name=".ui.monitoring.child.ChildMonitoringActivity"
-            android:parentActivityName=".main.MainActivity"
+            android:name=".ui.listAnak.ListAnakActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.monitoring.child.ChildMonitoringActivity"
+            android:exported="false"
+            android:parentActivityName=".main.MainActivity" />
         <activity
             android:name=".ui.profile.PersonalDataActivity"
             android:exported="false" />
