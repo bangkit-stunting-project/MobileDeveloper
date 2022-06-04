@@ -5,8 +5,10 @@ import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -52,10 +54,23 @@ class LoginActivity : AppCompatActivity() {
             this,
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[LoginViewModel::class.java]
+
+        loginViewModel.clearToken()
+
+        loginViewModel.isLoading.observe(this) {
+            showLoading(it)
+        }
+
+        loginViewModel.getToken().observe(this) { user ->
+            if (user.token.toString().isNotEmpty()) {
+                intentMain()
+                finish()
+            }
+        }
+
     }
 
     private fun setupAction(){
-
         loginBinding.registerButtonNavigation.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
         }
@@ -71,13 +86,20 @@ class LoginActivity : AppCompatActivity() {
                     loginBinding.passwordEditTextLayoutLogin.error = "Masukan Password"
                 }
                 else -> {
-                    loginViewModel.login()
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    finish()
+                    loginViewModel.postLogin(email, password)
                 }
             }
         }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        loginBinding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun intentMain() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(intent)
+        finish()
     }
 }

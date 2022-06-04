@@ -9,10 +9,9 @@ import com.capstone.anya.model.UserPreference
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val pref: UserPreference) : ViewModel() {
+
     fun getToken(): LiveData<UserModel> {
         return pref.getToken().asLiveData()
     }
-
-
 
 }

@@ -1,5 +1,9 @@
 package com.capstone.anya.model
 
-data class UserModel(
-    val isLogin: Boolean,
-)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class UserModel (
+    var token: String? = null
+) : Parcelable

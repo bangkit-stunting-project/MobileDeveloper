@@ -87,8 +87,6 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-        startActivity(Intent(this, ChildMonitoringActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -104,14 +102,13 @@ class MainActivity : AppCompatActivity() {
         )[MainViewModel::class.java]
 
         mainViewModel.getToken().observe(this) { user ->
-            if (user.isLogin) {
+            if (user.token.toString().isNotEmpty()) {
                 Toast.makeText(this@MainActivity, "You're Logged", Toast.LENGTH_SHORT).show()
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
         }
-
     }
 
     companion object {
