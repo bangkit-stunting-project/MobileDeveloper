@@ -4,13 +4,9 @@ import android.Manifest
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import android.os.Bundle
 import android.view.Menu
-import android.view.WindowInsets
-import android.view.WindowManager
 import android.widget.Toast
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -26,7 +22,7 @@ import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityMainBinding
 import com.capstone.anya.login.LoginActivity
 import com.capstone.anya.model.UserPreference
-import com.capstone.anya.ui.monitoring.child.ChildMonitoringActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
 

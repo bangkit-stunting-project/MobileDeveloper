@@ -8,6 +8,9 @@ import kotlinx.parcelize.Parcelize
 data class ResponseLogin(
 
 	@field:SerializedName("token")
-	val token: String
+	val token: String,
+
+	@field:SerializedName("message")
+	val message: String
 
 ) : Parcelable

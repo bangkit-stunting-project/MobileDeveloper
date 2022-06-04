@@ -19,7 +19,6 @@ class Register2Activity : AppCompatActivity() {
         register2Binding = ActivityRegister2Binding.inflate(layoutInflater)
         setContentView(register2Binding.root)
 
-
 //      Dropdown menu
         val jk_text =  resources.getStringArray(R.array.kelamin_array)
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_menu, jk_text)

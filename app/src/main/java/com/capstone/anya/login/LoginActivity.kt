@@ -3,21 +3,22 @@ package com.capstone.anya.login
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
+import com.capstone.anya.databinding.ActivityLoginBinding
 import com.capstone.anya.main.MainActivity
 import com.capstone.anya.main.ViewModelFactory
-import com.capstone.anya.databinding.ActivityLoginBinding
 import com.capstone.anya.model.UserPreference
 import com.capstone.anya.register.RegisterActivity
+
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
 
@@ -76,21 +77,33 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginBinding.loginButton.setOnClickListener {
-            val email = loginBinding.emailEditTextLogin.text.toString()
-            val password = loginBinding.passwordEditTextLogin.text.toString()
-            when {
-                email.isEmpty() -> {
-                    loginBinding.emailEditTextLayoutLogin.error = "Masukan Email"
-                }
-                password.isEmpty() -> {
-                    loginBinding.passwordEditTextLayoutLogin.error = "Masukan Password"
-                }
-                else -> {
-                    loginViewModel.postLogin(email, password)
-                }
+            loginValidation()
+        }
+    }
+
+    private fun loginValidation(){
+        val email = loginBinding.emailEditTextLogin.text.toString()
+        val password = loginBinding.passwordEditTextLogin.text.toString()
+        when {
+            email.isEmpty() -> {
+                loginBinding.emailEditTextLayoutLogin.error = "Email tidak boleh kosong"
+            }
+            !email.isValidEmail() -> {
+                loginBinding.emailEditTextLayoutLogin.error = "Email Format Salah"
+            }
+            password.isEmpty() -> {
+                loginBinding.emailEditTextLayoutLogin.error = null
+                loginBinding.passwordEditTextLayoutLogin.error = "Password tidak boleh kosong"
+            }
+            else -> {
+                loginBinding.passwordEditTextLayoutLogin.error = null
+                loginViewModel.postLogin(email, password)
             }
         }
     }
+
+    private fun String.isValidEmail() =
+        isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(this).matches()
 
     private fun showLoading(isLoading: Boolean) {
         loginBinding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE

@@ -54,8 +54,6 @@
             android:drawableLeft="@drawable/ic_date"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/spinner"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"

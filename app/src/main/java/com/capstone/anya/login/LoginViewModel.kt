@@ -1,12 +1,16 @@
 package com.capstone.anya.login
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.*
+import com.capstone.anya.R
 import com.capstone.anya.api.ResponseLogin
 import com.capstone.anya.model.UserModel
 import com.capstone.anya.model.UserPreference
 import com.example.storyappsubmission.ApiConfig
+import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,6 +47,7 @@ class LoginViewModel(private val pref: UserPreference) : ViewModel() {
             ) {
                 _isLoading.value = false
                 val responseBody = response.body()
+                Log.d(TAG, "$response")
                 if (response.isSuccessful && responseBody != null) {
                     saveToken(responseBody.token)
                 } else {
