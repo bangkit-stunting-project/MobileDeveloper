@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
+            android:name=".ui.inputAnak.InputAnakActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.listAnak.ListAnakActivity"
             android:exported="false" />
         <activity
