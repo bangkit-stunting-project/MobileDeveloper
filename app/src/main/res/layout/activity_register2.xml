@@ -42,16 +42,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tempatLahirEditTextLayoutRegister2"
-        >
+        app:startIconDrawable="@drawable/ic_date">
 
-        <TextView
-            android:id="@+id/datePickerText"
+        <AutoCompleteTextView
+            android:id="@+id/dateText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/text_tanggal_lahir"
+            android:layout_height="match_parent"
+            android:inputType="none"
             android:textSize="16dp"
-            android:drawableLeft="@drawable/ic_date"/>
+            android:text="@string/text_tanggal_lahir"
+            android:textColor="@color/date"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -88,6 +88,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

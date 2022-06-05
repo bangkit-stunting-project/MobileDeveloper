@@ -1,18 +1,23 @@
 package com.capstone.anya.register
 
 
+
 import android.app.DatePickerDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.DatePicker
 import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityRegister2Binding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class Register2Activity : AppCompatActivity() {
+
+class Register2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var register2Binding: ActivityRegister2Binding
+    private val myCalendar = Calendar.getInstance()
+    private val simpleDate = SimpleDateFormat("MMM, dd, yyyy", Locale.US)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,24 +31,24 @@ class Register2Activity : AppCompatActivity() {
 
 
 //      Date Picker function
-        val myCalendar = Calendar.getInstance()
-
-        val datePicker = DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
-            myCalendar.set(Calendar.YEAR, year)
-            myCalendar.set(Calendar.MONTH, month)
-            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-
-            updateCalendar(myCalendar)
-        }
-
-        register2Binding.datePickerLayout.setOnClickListener {
-            DatePickerDialog(this, datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH))
+        register2Binding.dateText.setOnClickListener {
+            DatePickerDialog(
+                this,
+                this,
+                myCalendar.get(Calendar.YEAR),
+                myCalendar.get(Calendar.MONTH),
+                myCalendar.get(Calendar.DAY_OF_MONTH)
+            ).show()
         }
     }
 
-    private fun updateCalendar(myCalendar: Calendar){
-        val myFormat = "dd-MM-yyyy"
-        val sdf = SimpleDateFormat(myFormat, Locale.UK)
-        register2Binding.datePickerText.setText(sdf.format(myCalendar.time))
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        myCalendar.set(year, month, dayOfMonth)
+        updateCalendar(myCalendar.timeInMillis)
+    }
+
+
+    private fun updateCalendar(mCalendar: Long){
+        register2Binding.dateText.setText(simpleDate.format(mCalendar))
     }
 }
