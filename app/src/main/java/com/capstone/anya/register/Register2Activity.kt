@@ -29,7 +29,6 @@ class Register2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_menu, jk_text)
         register2Binding.autoCompleteTextView.setAdapter(arrayAdapter)
 
-
 //      Date Picker function
         register2Binding.dateText.setOnClickListener {
             DatePickerDialog(
@@ -46,7 +45,6 @@ class Register2Activity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
         myCalendar.set(year, month, dayOfMonth)
         updateCalendar(myCalendar.timeInMillis)
     }
-
 
     private fun updateCalendar(mCalendar: Long){
         register2Binding.dateText.setText(simpleDate.format(mCalendar))

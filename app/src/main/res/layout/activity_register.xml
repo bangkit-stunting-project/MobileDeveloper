@@ -27,6 +27,7 @@
             android:ems="10"
             android:hint="@string/textHintName"
             android:inputType="textEmailAddress"
+            android:digits="ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz "
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -144,12 +145,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tempatLahirEditTextLayoutRegister2"
         app:startIconDrawable="@drawable/ic_date">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/datePickerText"
+        <AutoCompleteTextView
+            android:id="@+id/dateText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="@string/text_tanggal_lahir"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:textSize="16sp"
+            android:hint="@string/text_tanggal_lahir"
             android:textColor="@color/date"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,7 +169,7 @@
         app:startIconDrawable="@drawable/ic_gender">
 
         <AutoCompleteTextView
-            android:id="@+id/autoCompleteTextView"
+            android:id="@+id/genderTextView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="none"
@@ -176,7 +178,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/registerButtonNext"
+        android:id="@+id/registerButton"
         android:layout_width="0dp"
         android:layout_height="52dp"
         android:layout_marginStart="32dp"
@@ -184,10 +186,22 @@
         android:layout_marginEnd="32dp"
         android:alpha="1"
         android:backgroundTint="@color/pink"
-        android:text="@string/tv_berikutnya"
+        android:text="@string/text_selesai"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

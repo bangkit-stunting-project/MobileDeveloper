@@ -77,6 +77,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         loginBinding.loginButton.setOnClickListener {
+            hideWarning()
             loginValidation()
         }
     }
@@ -86,20 +87,23 @@ class LoginActivity : AppCompatActivity() {
         val password = loginBinding.passwordEditTextLogin.text.toString()
         when {
             email.isEmpty() -> {
-                loginBinding.emailEditTextLayoutLogin.error = "Email tidak boleh kosong"
+                loginBinding.emailEditTextLayoutLogin.error = "Masukkan email"
             }
             !email.isValidEmail() -> {
-                loginBinding.emailEditTextLayoutLogin.error = "Email Format Salah"
+                loginBinding.emailEditTextLayoutLogin.error = "Alamat email salah"
             }
             password.isEmpty() -> {
-                loginBinding.emailEditTextLayoutLogin.error = null
-                loginBinding.passwordEditTextLayoutLogin.error = "Password tidak boleh kosong"
+                loginBinding.passwordEditTextLayoutLogin.error = "Masukkan sebuah password"
             }
             else -> {
-                loginBinding.passwordEditTextLayoutLogin.error = null
                 loginViewModel.postLogin(email, password)
             }
         }
+    }
+
+    private fun hideWarning() {
+        loginBinding.emailEditTextLayoutLogin.error = null
+        loginBinding.passwordEditTextLayoutLogin.error = null
     }
 
     private fun String.isValidEmail() =

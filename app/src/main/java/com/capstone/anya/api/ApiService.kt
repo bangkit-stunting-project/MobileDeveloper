@@ -1,20 +1,12 @@
-package com.example.storyappsubmission
+package com.capstone.anya.api
 
-import com.capstone.anya.api.ResponseLogin
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import com.example.storyappsubmission.ApiConfig
 import retrofit2.Call
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.POST
 
 interface ApiService {
-
-    @FormUrlEncoded
-    @POST("register")
-    fun createUser(
-        @Field("name") name: String,
-        @Field("email") email: String,
-        @Field("password") password: String
-    ): Call<ResponseLogin>
 
     @FormUrlEncoded
     @POST("login")
@@ -22,5 +14,17 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<ResponseLogin>
+
+    @FormUrlEncoded
+    @POST("user/register")
+    fun registerUser(
+        @Field("namaLengkap") name: String,
+        @Field("email") email: String,
+        @Field("password") password: String,
+        @Field("confirmPassword") passwordConfirmation: String,
+        @Field("tempatLahir") address: String,
+        @Field("tanggalLahir") date: String,
+        @Field("jenisKelamin") gender: String
+    ): Call<ResponseRegister>
 
 }

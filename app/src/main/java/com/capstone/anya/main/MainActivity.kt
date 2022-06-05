@@ -83,8 +83,6 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
-//        startActivity(Intent(this, ChildMonitoringActivity::class.java))
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
