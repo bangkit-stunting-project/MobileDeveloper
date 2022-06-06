@@ -27,4 +27,12 @@ interface ApiService {
         @Field("jenisKelamin") gender: String
     ): Call<ResponseRegister>
 
+    @FormUrlEncoded
+    @POST("user/anak")
+    fun registerAnak(
+        @Field("namaLengkap") name: String,
+        @Field("tempatLahir") address: String,
+        @Field("tanggalLahir") date: String
+    ): Call<ResponseRegister>
+
 }

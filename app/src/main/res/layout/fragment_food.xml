@@ -6,13 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".ui.monitoring.child.FoodFragment">
 
-    <TextView
-        style="@style/Layout.InterBold"
-        android:layout_marginTop="16dp"
-        android:gravity="center_horizontal"
-        android:text="@string/title_progress"
-        android:textColor="@color/gray_800"
+    <ProgressBar
+        android:id="@+id/chartMakanan"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        android:rotation="-180"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="60" />
+
+    <TextView
+        android:id="@+id/percentage_text_makanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/chartMakanan"
+        app:layout_constraintEnd_toEndOf="@+id/chartMakanan"
+        app:layout_constraintStart_toStartOf="@+id/chartMakanan"
+        android:textSize="30dp"
+        app:layout_constraintTop_toTopOf="@+id/chartMakanan"
+        tools:text="60%" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
