@@ -47,7 +47,8 @@
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".login.LoginActivity" />
         <activity
             android:name=".login.LoginActivity"
             android:exported="false" />

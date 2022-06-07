@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val jkText =  resources.getStringArray(R.array.kelamin_array)
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_menu, jkText)

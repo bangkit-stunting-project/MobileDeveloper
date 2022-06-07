@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/iconEnergi"
+            android:src="@drawable/ic_energi"
             app:layout_constraintBottom_toBottomOf="@+id/text_percentage_energi"
             app:layout_constraintEnd_toStartOf="@+id/textEnergi"
             app:layout_constraintTop_toTopOf="@+id/textEnergi" />
@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/iconVitamin"
+            android:src="@drawable/ic_vitamin"
             app:layout_constraintBottom_toBottomOf="@+id/text_percentage_vitamin"
             app:layout_constraintEnd_toStartOf="@+id/textVitamin"
             app:layout_constraintTop_toTopOf="@+id/textVitamin" />
@@ -93,7 +93,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:src="@drawable/iconMineral"
+            android:src="@drawable/ic_mineral"
             app:layout_constraintBottom_toBottomOf="@+id/text_percentage_Mineral"
             app:layout_constraintEnd_toStartOf="@+id/textMineral"
             app:layout_constraintTop_toTopOf="@+id/textMineral" />
