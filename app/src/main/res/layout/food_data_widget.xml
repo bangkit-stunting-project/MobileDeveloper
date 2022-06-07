@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingRight="90dp"
+        >
+
+        <ImageView
+            android:id="@+id/iconEnergi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/iconEnergi"
+            app:layout_constraintBottom_toBottomOf="@+id/text_percentage_energi"
+            app:layout_constraintEnd_toStartOf="@+id/textEnergi"
+            app:layout_constraintTop_toTopOf="@+id/textEnergi" />
+
+        <TextView
+            android:id="@+id/textEnergi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Energi"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/iconEnergi"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_percentage_energi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="74%"
+            app:layout_constraintEnd_toEndOf="@+id/textEnergi"
+            app:layout_constraintStart_toStartOf="@+id/textEnergi"
+            app:layout_constraintTop_toBottomOf="@+id/textEnergi"
+            android:textColor="@color/black"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <ImageView
+            android:id="@+id/iconVitamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/iconVitamin"
+            app:layout_constraintBottom_toBottomOf="@+id/text_percentage_vitamin"
+            app:layout_constraintEnd_toStartOf="@+id/textVitamin"
+            app:layout_constraintTop_toTopOf="@+id/textVitamin" />
+
+        <TextView
+            android:id="@+id/textVitamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Vitamin"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/iconVitamin"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_percentage_vitamin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="80%"
+            app:layout_constraintEnd_toEndOf="@+id/textVitamin"
+            app:layout_constraintStart_toStartOf="@+id/textVitamin"
+            app:layout_constraintTop_toBottomOf="@+id/textVitamin"
+            android:textColor="@color/black"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="90dp">
+
+        <ImageView
+            android:id="@+id/iconMineral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/iconMineral"
+            app:layout_constraintBottom_toBottomOf="@+id/text_percentage_Mineral"
+            app:layout_constraintEnd_toStartOf="@+id/textMineral"
+            app:layout_constraintTop_toTopOf="@+id/textMineral" />
+
+        <TextView
+            android:id="@+id/textMineral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Mineral"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/iconMineral"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_percentage_Mineral"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90%"
+            app:layout_constraintEnd_toEndOf="@+id/textMineral"
+            app:layout_constraintStart_toStartOf="@+id/textMineral"
+            app:layout_constraintTop_toBottomOf="@+id/textMineral"
+            android:textColor="@color/black"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
