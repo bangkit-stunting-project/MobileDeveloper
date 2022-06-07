@@ -21,6 +21,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Anya">
         <activity
+            android:name=".main.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.inputAnak.InputAnakActivity"
             android:exported="false" />
         <activity
@@ -32,18 +44,6 @@
             android:parentActivityName=".main.MainActivity" />
         <activity
             android:name=".ui.profile.PersonalDataActivity"
-            android:exported="false" />
-        <activity
-            android:name=".main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".register.Register2Activity"
             android:exported="false" />
         <activity
             android:name=".register.RegisterActivity"

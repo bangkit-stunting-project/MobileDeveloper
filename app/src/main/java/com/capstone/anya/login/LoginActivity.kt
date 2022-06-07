@@ -2,12 +2,9 @@ package com.capstone.anya.login
 
 import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
-import android.view.WindowInsets
-import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
@@ -31,23 +28,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         loginBinding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(loginBinding.root)
+        supportActionBar?.hide()
 
-        setupView()
         setupViewModel()
         setupAction()
-    }
-
-    private fun setupView() {
-        @Suppress("DEPRECATION")
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            window.insetsController?.hide(WindowInsets.Type.statusBars())
-        } else {
-            window.setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-            )
-        }
-        supportActionBar?.hide()
     }
 
     private fun setupViewModel() {
@@ -61,7 +45,6 @@ class LoginActivity : AppCompatActivity() {
         loginViewModel.isLoading.observe(this) {
             showLoading(it)
         }
-
         loginViewModel.getToken().observe(this) { user ->
             if (user.token.toString().isNotEmpty()) {
                 intentMain()
@@ -102,8 +85,8 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun hideWarning() {
-        loginBinding.emailEditTextLayoutLogin.error = null
-        loginBinding.passwordEditTextLayoutLogin.error = null
+        loginBinding.emailEditTextLayoutLogin.isErrorEnabled = false
+        loginBinding.passwordEditTextLayoutLogin.isErrorEnabled = false
     }
 
     private fun String.isValidEmail() =

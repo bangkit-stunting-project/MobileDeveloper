@@ -35,12 +35,10 @@ class RegisterViewModel() : ViewModel() {
             ) {
                 _isLoading.value = false
                 val responseBody = response.body()
-                Log.d(TAG, "$response")
                 if (response.isSuccessful && responseBody != null) {
                     _isDone.value = true
+                    Log.d(SUCCESS, "$_isDone")
                 } else {
-                    val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
-                    Log.d("TAG", jsonObj.getString("message"))
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }
@@ -52,5 +50,6 @@ class RegisterViewModel() : ViewModel() {
 
     companion object {
         private const val TAG = "RegisterViewModel"
+        private const val SUCCESS = "LoginSuccess"
     }
 }
