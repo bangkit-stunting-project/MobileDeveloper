@@ -1,25 +1,32 @@
 package com.capstone.anya.ui.inputAnak
 
 import android.app.DatePickerDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.DatePicker
 import androidx.activity.viewModels
-import com.capstone.anya.R
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.preferencesDataStore
+import androidx.lifecycle.ViewModelProvider
 import com.capstone.anya.databinding.ActivityInputAnakBinding
-import com.capstone.anya.databinding.ActivityLoginBinding
-import com.capstone.anya.login.LoginActivity
-import com.capstone.anya.register.RegisterViewModel
+import com.capstone.anya.main.MainViewModel
+import com.capstone.anya.main.ViewModelFactory
+import com.capstone.anya.model.UserPreference
 import com.capstone.anya.ui.listAnak.ListAnakActivity
 import java.text.SimpleDateFormat
 import java.util.*
+
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
 
 class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     private lateinit var bindingInputAnak: ActivityInputAnakBinding
     private val inputAnakViewModel by viewModels<InputAnakViewModel>()
+    private lateinit var mainViewModel: MainViewModel
 
     private val myCalendar = Calendar.getInstance()
     private val simpleDate = SimpleDateFormat("yyyy-MM-dd", Locale.US)
@@ -53,6 +60,11 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
     }
 
     private fun setupViewModel() {
+        mainViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(dataStore))
+        )[MainViewModel::class.java]
+
         inputAnakViewModel.isLoading.observe(this) {
             showLoading(it)
         }
@@ -67,10 +79,15 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
             setDatePicker()
         }
 
-        bindingInputAnak.buttonInputAnak.setOnClickListener {
-            hideWarning()
-            inputAnakValidation()
+        mainViewModel.getToken().observe(this) { user ->
+            if (user.token.toString().isNotEmpty()) {
+                bindingInputAnak.buttonInputAnak.setOnClickListener {
+                    hideWarning()
+                    inputAnakValidation(user.token.toString())
+                }
+            }
         }
+
     }
 
     private fun hideWarning() {
@@ -81,7 +98,7 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
 
 
 
-    private fun inputAnakValidation(){
+    private fun inputAnakValidation(token:String){
         val nama = bindingInputAnak.nameEditTextInputAnak.text.toString()
         val tempatLahir = bindingInputAnak.tempatLahirEditTextInputAnak.text.toString()
         val tlAnak = bindingInputAnak.dateText.text.toString()
@@ -96,7 +113,7 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
                 bindingInputAnak.datePickerLayout.error = "Tanggal Lahir tidak boleh kosong"
             }
             else -> {
-                inputAnakViewModel.postRegisterAnak(nama, tempatLahir, tlAnak)
+                inputAnakViewModel.postRegisterAnak(token, nama, tempatLahir, tlAnak)
             }
         }
     }

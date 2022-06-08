@@ -4,7 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.capstone.anya.api.ResponseRegister
+import com.capstone.anya.model.UserModel
+import com.capstone.anya.model.UserPreference
 import com.capstone.anya.register.RegisterViewModel
 import com.example.storyappsubmission.ApiConfig
 import org.json.JSONObject
@@ -20,9 +23,9 @@ class InputAnakViewModel() : ViewModel()  {
     private val _isDone = MutableLiveData<Boolean>()
     val isDone: LiveData<Boolean> = _isDone
 
-    fun postRegisterAnak(name: String, address: String, date: String) {
+    fun postRegisterAnak(token:String ,name: String, address: String, date: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().registerAnak(name, address, date)
+        val client = ApiConfig.getApiService().registerAnak(token, name, address, date)
         client.enqueue(object : Callback<ResponseRegister> {
             override fun onResponse(
                 call: Call<ResponseRegister>,
@@ -44,6 +47,7 @@ class InputAnakViewModel() : ViewModel()  {
             }
         })
     }
+
 
     companion object {
         private const val TAG = "InputAnakViewModel"
