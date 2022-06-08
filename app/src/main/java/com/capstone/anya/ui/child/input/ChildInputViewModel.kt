@@ -1,21 +1,16 @@
-package com.capstone.anya.ui.inputAnak
+package com.capstone.anya.ui.child.input
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
 import com.capstone.anya.api.ResponseRegister
-import com.capstone.anya.model.UserModel
-import com.capstone.anya.model.UserPreference
-import com.capstone.anya.register.RegisterViewModel
 import com.example.storyappsubmission.ApiConfig
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class InputAnakViewModel() : ViewModel()  {
+class ChildInputViewModel() : ViewModel()  {
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
@@ -36,14 +31,14 @@ class InputAnakViewModel() : ViewModel()  {
                 Log.d(TAG, "$response")
                 if (response.isSuccessful && responseBody != null) {
                     _isDone.value = true
+                    Log.d(TAG, "$_isDone")
                 } else {
-                    val jsonObj = JSONObject(response.errorBody()!!.charStream().readText())
-                    Log.d("TAG", jsonObj.getString("message"))
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<ResponseRegister>, t: Throwable) {
                 _isLoading.value = false
+                Log.d(TAG, "Gagal")
             }
         })
     }

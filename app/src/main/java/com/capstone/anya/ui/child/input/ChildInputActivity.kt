@@ -1,8 +1,7 @@
-package com.capstone.anya.ui.inputAnak
+package com.capstone.anya.ui.child.input
 
 import android.app.DatePickerDialog
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,11 +11,11 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.anya.databinding.ActivityInputAnakBinding
+import com.capstone.anya.R
+import com.capstone.anya.databinding.ActivityChildInputBinding
 import com.capstone.anya.main.MainViewModel
 import com.capstone.anya.main.ViewModelFactory
 import com.capstone.anya.model.UserPreference
-import com.capstone.anya.ui.listAnak.ListAnakActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,8 +23,8 @@ private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(na
 
 class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
-    private lateinit var bindingInputAnak: ActivityInputAnakBinding
-    private val inputAnakViewModel by viewModels<InputAnakViewModel>()
+    private lateinit var bindingInputAnak: ActivityChildInputBinding
+    private val inputAnakViewModel by viewModels<ChildInputViewModel>()
     private lateinit var mainViewModel: MainViewModel
 
     private val myCalendar = Calendar.getInstance()
@@ -33,8 +32,11 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        bindingInputAnak = ActivityInputAnakBinding.inflate(layoutInflater)
+        bindingInputAnak = ActivityChildInputBinding.inflate(layoutInflater)
         setContentView(bindingInputAnak.root)
+
+        title = getString(R.string.title_input_anak)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         setupViewModel()
         setupAction()
@@ -69,9 +71,8 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
             showLoading(it)
         }
         inputAnakViewModel.isDone.observe(this) {
-            intentListAnak(it)
+            intentFinish(it)
         }
-
     }
 
     private fun setupAction() {
@@ -87,13 +88,12 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
                 }
             }
         }
-
     }
 
     private fun hideWarning() {
-        bindingInputAnak.tempatLahirEditTextLayoutInputAnak.error = null
-        bindingInputAnak.nameEditTextLayoutInputAnak.error = null
-        bindingInputAnak.datePickerLayout.error = null
+        bindingInputAnak.tempatLahirEditTextLayoutInputAnak.isErrorEnabled = false
+        bindingInputAnak.nameEditTextLayoutInputAnak.isErrorEnabled = false
+        bindingInputAnak.datePickerLayout.isErrorEnabled = false
     }
 
 
@@ -122,10 +122,8 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
         bindingInputAnak.progressBarInputAnak.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
-    private fun intentListAnak(isDone: Boolean) {
+    private fun intentFinish(isDone: Boolean) {
         if(isDone){
-            val intent = Intent(this, ListAnakActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }

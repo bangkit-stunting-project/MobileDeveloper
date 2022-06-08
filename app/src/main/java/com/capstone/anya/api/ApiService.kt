@@ -29,7 +29,7 @@ interface ApiService {
     ): Call<ResponseRegister>
 
     @FormUrlEncoded
-    @POST("user/anak")
+    @POST("anak")
     fun registerAnak(
         @Header("auth")auth:String,
         @Field("namaLengkap") name: String,

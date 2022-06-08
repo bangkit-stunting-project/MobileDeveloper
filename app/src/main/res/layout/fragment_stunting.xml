@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.monitoring.child.StuntingFragment">
+    tools:context=".ui.child.monitoring.StuntingFragment">
 
     <TextView
         android:id="@+id/tv_detail"
@@ -170,7 +170,7 @@
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="16dp"
         android:alpha="1"
         android:backgroundTint="@color/pink"
         android:text="@string/text_stunting_check"

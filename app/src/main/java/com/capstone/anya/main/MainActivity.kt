@@ -22,7 +22,6 @@ import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityMainBinding
 import com.capstone.anya.login.LoginActivity
 import com.capstone.anya.model.UserPreference
-import com.capstone.anya.ui.monitoring.child.ChildMonitoringActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
@@ -101,7 +100,7 @@ class MainActivity : AppCompatActivity() {
             if (user.token.toString().isNotEmpty()) {
                 Toast.makeText(this@MainActivity, "You're Logged", Toast.LENGTH_SHORT).show()
             } else {
-                startActivity(Intent(this, ChildMonitoringActivity::class.java))
+                startActivity(Intent(this, LoginActivity::class.java))
                 finish()
             }
         }

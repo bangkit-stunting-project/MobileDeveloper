@@ -29,6 +29,8 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
+
+        title = getString(R.string.title_register)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val jkText =  resources.getStringArray(R.array.kelamin_array)
@@ -49,7 +51,7 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
             showLoading(it)
         }
         registerViewModel.isDone.observe(this) {
-            intentLogin(it)
+            intentFinish(it)
         }
     }
 
@@ -156,10 +158,8 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         registerBinding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 
-    private fun intentLogin(isDone: Boolean) {
+    private fun intentFinish(isDone: Boolean) {
         if(isDone){
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
             finish()
         }
     }

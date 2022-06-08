@@ -1,9 +1,7 @@
-package com.capstone.anya.ui.monitoring.child
+package com.capstone.anya.ui.child.monitoring
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
 import androidx.annotation.StringRes
 import androidx.viewpager2.widget.ViewPager2
 import com.capstone.anya.R
@@ -15,6 +13,13 @@ class ChildMonitoringActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_child_monitoring)
 
+        title = getString(R.string.title_child_monitoring)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
+        setupTabLayout()
+    }
+
+    private fun setupTabLayout(){
         val sectionsPagerAdapter = SectionsPagerAdapter(this)
         val viewPager: ViewPager2 = findViewById(R.id.view_pager)
         viewPager.adapter = sectionsPagerAdapter
@@ -22,9 +27,6 @@ class ChildMonitoringActivity : AppCompatActivity() {
         TabLayoutMediator(tabs, viewPager) { tab, position ->
             tab.text = resources.getString(TAB_TITLES[position])
         }.attach()
-
-        supportActionBar?.elevation = 0f
-        supportActionBar?.setDisplayShowHomeEnabled(true)
     }
 
     companion object {

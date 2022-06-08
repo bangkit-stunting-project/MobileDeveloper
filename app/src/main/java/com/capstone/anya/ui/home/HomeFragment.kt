@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.anya.R
 import com.capstone.anya.databinding.FragmentHomeBinding
-import com.capstone.anya.ui.listAnak.ListAnakActivity
-import com.capstone.anya.ui.monitoring.child.ChildMonitoringActivity
+import com.capstone.anya.ui.child.list.ChildListActivity
 
 class HomeFragment : Fragment() {
 
@@ -33,7 +31,7 @@ class HomeFragment : Fragment() {
         val root: View = binding.root
 
         binding.monChildWidget.buttonBuatDataAnak.root.setOnClickListener {
-            val mIntent = Intent(requireActivity(), ListAnakActivity::class.java)
+            val mIntent = Intent(requireActivity(), ChildListActivity::class.java)
             startActivity(mIntent)
 
         }

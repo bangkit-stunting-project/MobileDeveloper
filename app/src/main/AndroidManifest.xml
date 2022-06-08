@@ -43,13 +43,15 @@
             android:name=".main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.inputAnak.InputAnakActivity"
-            android:exported="false" />
+            android:name="com.capstone.anya.ui.child.input.InputAnakActivity"
+            android:exported="false"
+            android:parentActivityName=".ui.child.list.ChildListActivity" />
         <activity
-            android:name=".ui.listAnak.ListAnakActivity"
-            android:exported="false" />
+            android:name="com.capstone.anya.ui.child.list.ChildListActivity"
+            android:exported="false"
+            android:parentActivityName=".main.MainActivity" />
         <activity
-            android:name=".ui.monitoring.child.ChildMonitoringActivity"
+            android:name="com.capstone.anya.ui.child.monitoring.ChildMonitoringActivity"
             android:exported="false"
             android:parentActivityName=".main.MainActivity" />
         <activity

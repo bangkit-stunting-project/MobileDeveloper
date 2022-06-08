@@ -44,6 +44,13 @@
     <string name="text_tambah_makanan">Tambah makanan</string>
     <string name="text_makanan_terakhir">Makanan Terakhir</string>
 
+    <string name="title_register">Buat Akun</string>
+    <string name="title_list_anak">Daftar Anak</string>
+    <string name="title_input_anak">Buat Anak</string>
+    <string name="title_child_monitoring">Monitoring Anak</string>
+    <string name="title_mother_monitoring">Monitoring Ibu</string>
+
+
     <string name="text_stunting">Stunting</string>
     <string name="text_not_stunting">Tidak Stunting</string>
     <string name="text_no_data">No Data</string>
@@ -60,6 +67,5 @@
     <string name="text_history">Riwayat</string>
     <string name="text_diagnose">Tidak Stunting</string>
     <string name="text_title_diagnose">Diagnosa</string>
-
 
 </resources>

@@ -20,6 +20,6 @@ data class ResponseLogin(
 data class ResponseRegister(
 
 	@field:SerializedName("message")
-	val message: List<String>
+	val message: String
 
 ) : Parcelable

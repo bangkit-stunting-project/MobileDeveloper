@@ -1,4 +1,4 @@
-package com.capstone.anya.ui.monitoring.child
+package com.capstone.anya.ui.child.monitoring
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
