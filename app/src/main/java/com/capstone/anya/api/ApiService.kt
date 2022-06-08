@@ -4,6 +4,7 @@ import com.example.storyappsubmission.ApiConfig
 import retrofit2.Call
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Header
 import retrofit2.http.POST
 
 interface ApiService {
@@ -30,6 +31,7 @@ interface ApiService {
     @FormUrlEncoded
     @POST("user/anak")
     fun registerAnak(
+        @Header("auth")auth:String,
         @Field("namaLengkap") name: String,
         @Field("tempatLahir") address: String,
         @Field("tanggalLahir") date: String

@@ -22,6 +22,9 @@
         android:theme="@style/Theme.Anya"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.food.FoodDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.food.FoodSearchActivity"
             android:exported="false" />
         <activity
