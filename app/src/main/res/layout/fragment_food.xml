@@ -34,7 +34,7 @@
         android:id="@+id/title_percentage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tersisa"
+        android:text="@string/text_tersisa"
         android:textColor="@color/black"
         app:layout_constraintBottom_toTopOf="@+id/percentage_text_makanan"
         app:layout_constraintEnd_toEndOf="@+id/percentage_text_makanan"
@@ -48,7 +48,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/chartMakanan"
         app:layout_constraintEnd_toEndOf="@+id/chartMakanan"
         app:layout_constraintStart_toStartOf="@+id/chartMakanan"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintTop_toTopOf="@+id/chartMakanan"
         tools:text="25%" />
 
@@ -80,9 +80,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Makanan Terakhir"
+        android:text="@string/text_makanan_terakhir"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="@+id/borderFragmentFood"
         app:layout_constraintStart_toStartOf="@+id/borderFragmentFood"
         app:layout_constraintTop_toBottomOf="@+id/borderFragmentFood" />
@@ -108,7 +108,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Tambah Makanan"
+        android:text="@string/text_tambah_makanan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

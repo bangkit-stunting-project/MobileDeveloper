@@ -39,4 +39,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splash_screen">Splash Screen</string>
     <string name="app_description">Aplikasi monitoring stunting</string>
+    <string name="text_tersisa">Tersisa</string>
+    <string name="text_tambah_makanan">Tambah Makanan</string>
+    <string name="text_makanan_terakhir">Makanan Terakhir</string>
 </resources>
