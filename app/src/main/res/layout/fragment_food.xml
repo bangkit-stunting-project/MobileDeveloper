@@ -13,7 +13,7 @@
         android:gravity="center_horizontal"
         android:text="@string/title_progress"
         android:textColor="@color/gray_800"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -65,11 +65,11 @@
     <TextView
         android:id="@+id/borderFragmentFood"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="5dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/border_black"
+        android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/food_data_widget" />
@@ -79,10 +79,10 @@
         style="@style/Layout.InterBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/text_makanan_terakhir"
+        android:layout_marginTop="16dp"
+        android:text="@string/text_history"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/borderFragmentFood"
         app:layout_constraintStart_toStartOf="@+id/borderFragmentFood"
         app:layout_constraintTop_toBottomOf="@+id/borderFragmentFood" />
@@ -94,24 +94,25 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonTambahMakanan"
-
+        app:layout_constraintBottom_toTopOf="@+id/btn_add_food"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title_history_food"
         tools:listitem="@layout/food_history_item" />
 
     <Button
-        android:id="@+id/buttonTambahMakanan"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_add_food"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="24dp"
+        android:alpha="1"
+        android:backgroundTint="@color/pink"
         android:text="@string/text_tambah_makanan"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,7 +25,7 @@
     <string name="mon_child_status">Belum ada data anak</string>
     <string name="mon_child_warning">Buat data anak terlebih dahulu</string>
     <string name="child_image">Child Image</string>
-    <string name="create_data">Buat Data</string>
+    <string name="create_data">Buat data</string>
     <string name="mon_mother_status">Belum ada data ibu</string>
     <string name="mon_mother_warning">Buat data ibu terlebih dahulu</string>
     <string name="notification">Notifikasi</string>
@@ -35,11 +35,31 @@
     <string name="title_stunting">Stunting</string>
     <string name="title_progress">Progress</string>
     <string name="title_detail">Detail</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splash_screen">Splash Screen</string>
     <string name="app_description">Aplikasi monitoring stunting</string>
+
     <string name="text_tersisa">Tersisa</string>
-    <string name="text_tambah_makanan">Tambah Makanan</string>
+    <string name="text_tambah_makanan">Tambah makanan</string>
     <string name="text_makanan_terakhir">Makanan Terakhir</string>
+
+    <string name="text_stunting">Stunting</string>
+    <string name="text_not_stunting">Tidak Stunting</string>
+    <string name="text_no_data">No Data</string>
+    <string name="text_status">Status</string>
+    <string name="text_title_date">Tanggal Periksa</string>
+    <string name="text_date">01 Jan 2001</string>
+    <string name="text_title_weight">Berat</string>
+    <string name="text_weight">1 Kg</string>
+    <string name="text_title_height">Tinggi</string>
+    <string name="text_height">50 cm</string>
+    <string name="text_title_age">Umur</string>
+    <string name="text_age">100 hari</string>
+    <string name="text_stunting_check">Periksa stunting</string>
+    <string name="text_history">Riwayat</string>
+    <string name="text_diagnose">Tidak Stunting</string>
+    <string name="text_title_diagnose">Diagnosa</string>
+
+
 </resources>

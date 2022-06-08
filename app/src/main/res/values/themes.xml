@@ -48,14 +48,20 @@
 
     <!-- Font. -->
     <style name="Layout.InterRegular">
-        <item name="android:textSize">12sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/roboto_regular</item>
     </style>
 
     <style name="InterMedium">
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/roboto_medium</item>
     </style>
+
+    <style name="Layout.InterMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/roboto_medium</item>
+    </style>
+
 
     <style name="Layout.InterSemiBold">
         <item name="android:textSize">14sp</item>
@@ -71,5 +77,6 @@
         <item name="android:textSize">40sp</item>
         <item name="fontFamily">@font/roboto_bold</item>
     </style>
+
 
 </resources>

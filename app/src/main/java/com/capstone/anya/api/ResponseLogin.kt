@@ -19,9 +19,6 @@ data class ResponseLogin(
 @Parcelize
 data class ResponseRegister(
 
-	@field:SerializedName("token")
-	val token: String,
-
 	@field:SerializedName("message")
 	val message: List<String>
 

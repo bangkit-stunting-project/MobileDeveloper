@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity() {
             if (user.token.toString().isNotEmpty()) {
                 Toast.makeText(this@MainActivity, "You're Logged", Toast.LENGTH_SHORT).show()
             } else {
-                startActivity(Intent(this, LoginActivity::class.java))
+                startActivity(Intent(this, ChildMonitoringActivity::class.java))
                 finish()
             }
         }

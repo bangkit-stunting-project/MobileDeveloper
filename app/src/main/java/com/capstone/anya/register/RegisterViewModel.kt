@@ -43,6 +43,7 @@ class RegisterViewModel() : ViewModel() {
                 }
             }
             override fun onFailure(call: Call<ResponseRegister>, t: Throwable) {
+                Log.e(TAG, "Gagal")
                 _isLoading.value = false
             }
         })
