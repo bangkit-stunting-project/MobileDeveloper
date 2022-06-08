@@ -29,6 +29,7 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         super.onCreate(savedInstanceState)
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(registerBinding.root)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
 
         val jkText =  resources.getStringArray(R.array.kelamin_array)
         val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_menu, jkText)
@@ -50,7 +51,6 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         registerViewModel.isDone.observe(this) {
             intentLogin(it)
         }
-
     }
 
     private fun setupAction() {
@@ -72,7 +72,12 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val address = registerBinding.tempatLahirEditText.text.toString()
         val date = registerBinding.dateText.text.toString()
         var gender: String = registerBinding.genderTextView.text.toString()
-        gender = if(gender == "Laki-Laki") "M" else "F"
+
+        if(gender == "Laki-Laki"){
+            gender = "M"
+        }else if(gender == "Perempuan"){
+            gender = "F"
+        }
 
         when {
             name.isEmpty() -> {
@@ -100,24 +105,25 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
                 registerBinding.tempatLahirEditTextLayoutRegister2.error = "Masukkan tempat tinggal atau lahir"
             }
             date.isEmpty() -> {
-                registerBinding.datePickerLayout.error = "Masukkan tanggal lahir"
+                registerBinding.datePickerLayoutRegister.error = "Masukkan tanggal lahir"
             }
             gender.isEmpty() -> {
-                registerBinding.datePickerLayout.error = "Pilih jenis kelamin"
+                registerBinding.spinner.error = "Pilih jenis kelamin"
             }
             else -> {
-                Log.d("RegisterActivity", "$name, $email, $password, $passwordConfirm, $address, $date, $gender")
                 registerViewModel.postRegister(name, email, password, passwordConfirm, address, date, gender)
             }
         }
     }
 
     private fun hideWarning() {
-        registerBinding.nameEditTextLayoutRegister.error = null
-        registerBinding.emailEditTextLayoutRegister.error = null
-        registerBinding.passwordEditTextLayoutRegister.error = null
-        registerBinding.konfirmasiPasswordEditTextLayoutRegister.error = null
-        registerBinding.tempatLahirEditTextLayoutRegister2.error = null
+        registerBinding.nameEditTextLayoutRegister.isErrorEnabled = false
+        registerBinding.emailEditTextLayoutRegister.isErrorEnabled = false
+        registerBinding.passwordEditTextLayoutRegister.isErrorEnabled = false
+        registerBinding.konfirmasiPasswordEditTextLayoutRegister.isErrorEnabled = false
+        registerBinding.tempatLahirEditTextLayoutRegister2.isErrorEnabled = false
+        registerBinding.datePickerLayoutRegister.isErrorEnabled = false
+        registerBinding.spinner.isErrorEnabled = false
     }
 
     private fun setDatePicker() {

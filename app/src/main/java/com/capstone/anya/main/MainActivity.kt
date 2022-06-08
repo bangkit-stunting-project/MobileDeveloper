@@ -22,6 +22,7 @@ import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityMainBinding
 import com.capstone.anya.login.LoginActivity
 import com.capstone.anya.model.UserPreference
+import com.capstone.anya.ui.monitoring.child.ChildMonitoringActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
@@ -54,12 +55,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        setupViewModel()
 
+        super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setupViewModel()
 
         if (!allPermissionsGranted()) {
             ActivityCompat.requestPermissions(
