@@ -8,14 +8,14 @@
 
     <TextView
         android:id="@+id/title_food_detail"
+        style="@style/Layout.InterBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="Puree Buah"
         android:textColor="@color/gray_800"
         android:textSize="25sp"
-        style="@style/Layout.InterBold"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,15 +33,79 @@
 
     <TextView
         android:id="@+id/title_food_gizi"
+        style="@style/Layout.InterBold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gizi Makanan"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Porsi"
         android:textColor="@color/gray_800"
-        android:textSize="23sp"
-        style="@style/Layout.InterBold"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/borderFoodDetail" />
+
+    <Button
+        android:id="@+id/increment_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white"
+        android:text="+"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/borderFoodDetail" />
+
+    <TextView
+        android:id="@+id/text_porsi"
+        style="@style/Layout.InterBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/increment_food"
+        app:layout_constraintEnd_toStartOf="@+id/increment_food"
+        app:layout_constraintTop_toTopOf="@+id/increment_food" />
+
+    <Button
+        android:id="@+id/decrement_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/white"
+        android:text="-"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_porsi"
+        app:layout_constraintEnd_toStartOf="@+id/text_porsi"
+        app:layout_constraintTop_toTopOf="@+id/text_porsi" />
+
+    <TextView
+        android:id="@+id/text_nutrition"
+        style="@style/Layout.InterBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Nutrisi"
+        android:textColor="@color/gray_800"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/decrement_food" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nutrition"
+        tools:progress="50" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
