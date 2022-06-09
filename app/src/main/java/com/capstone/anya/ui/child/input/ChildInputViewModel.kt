@@ -20,7 +20,7 @@ class ChildInputViewModel() : ViewModel()  {
 
     fun postRegisterAnak(token:String ,name: String, address: String, date: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().registerAnak(token, name, address, date)
+        val client = ApiConfig.getApiService().registerChild(token, name, address, date)
         client.enqueue(object : Callback<ResponseRegister> {
             override fun onResponse(
                 call: Call<ResponseRegister>,

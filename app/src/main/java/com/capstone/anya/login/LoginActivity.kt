@@ -17,7 +17,7 @@ import com.capstone.anya.model.UserPreference
 import com.capstone.anya.register.RegisterActivity
 
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
+val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "authLogin")
 
 class LoginActivity : AppCompatActivity() {
 
@@ -51,7 +51,6 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
         }
-
     }
 
     private fun setupAction(){

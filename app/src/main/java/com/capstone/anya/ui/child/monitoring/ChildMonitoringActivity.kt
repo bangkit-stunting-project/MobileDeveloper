@@ -14,6 +14,7 @@ class ChildMonitoringActivity : AppCompatActivity() {
         setContentView(R.layout.activity_child_monitoring)
 
         title = getString(R.string.title_child_monitoring)
+        supportActionBar?.elevation = 0f
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         setupTabLayout()
@@ -35,5 +36,7 @@ class ChildMonitoringActivity : AppCompatActivity() {
             R.string.title_food,
             R.string.title_stunting
         )
+        const val EXTRA_CHILD = "extra_child"
+
     }
 }

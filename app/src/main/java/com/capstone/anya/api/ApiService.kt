@@ -1,11 +1,7 @@
 package com.capstone.anya.api
 
-import com.example.storyappsubmission.ApiConfig
 import retrofit2.Call
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
 
@@ -30,11 +26,22 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("anak")
-    fun registerAnak(
+    fun registerChild(
         @Header("auth")auth:String,
         @Field("namaLengkap") name: String,
         @Field("tempatLahir") address: String,
         @Field("tanggalLahir") date: String
     ): Call<ResponseRegister>
+
+    @GET("anak")
+    fun childList(
+        @Header("auth") auth:String
+    ): Call<List<ResponseChildListItem>>
+
+    @GET("anak/{id}")
+    fun child(
+        @Header("auth") auth:String,
+        @Path("id") id: Int
+    ): Call<List<ResponseChildListItem>>
 
 }
