@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
     override fun getItemCount(): Int {
-        return 2
+        return 3
     }
 
     override fun createFragment(position: Int): Fragment {
@@ -14,6 +14,7 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         when (position) {
             0 -> fragment = FoodFragment()
             1 -> fragment = StuntingFragment()
+            2 -> fragment = NutritionFragment()
         }
         return fragment as Fragment
     }
