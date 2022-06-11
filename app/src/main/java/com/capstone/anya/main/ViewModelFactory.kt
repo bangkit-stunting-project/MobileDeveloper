@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.capstone.anya.login.LoginViewModel
 import com.capstone.anya.model.UserPreference
 import com.capstone.anya.ui.child.list.ChildListViewModel
+import com.capstone.anya.ui.education.EducationViewModel
 import com.capstone.anya.ui.profile.ProfileViewModel
 
 class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.NewInstanceFactory() {
@@ -26,6 +27,9 @@ class ViewModelFactory(private val pref: UserPreference) : ViewModelProvider.New
             }
             modelClass.isAssignableFrom(ChildListViewModel::class.java) -> {
                 ChildListViewModel(pref) as T
+            }
+            modelClass.isAssignableFrom(EducationViewModel::class.java) -> {
+                EducationViewModel(pref) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }

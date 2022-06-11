@@ -18,9 +18,9 @@ class ChildInputViewModel() : ViewModel()  {
     private val _isDone = MutableLiveData<Boolean>()
     val isDone: LiveData<Boolean> = _isDone
 
-    fun postRegisterAnak(token:String ,name: String, address: String, date: String) {
+    fun postRegisterChild(token:String, name: String, address: String, date: String, gender: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().registerChild(token, name, address, date)
+        val client = ApiConfig.getApiService().registerChild(token, name, address, date, gender)
         client.enqueue(object : Callback<ResponseRegister> {
             override fun onResponse(
                 call: Call<ResponseRegister>,
@@ -42,7 +42,6 @@ class ChildInputViewModel() : ViewModel()  {
             }
         })
     }
-
 
     companion object {
         private const val TAG = "InputAnakViewModel"

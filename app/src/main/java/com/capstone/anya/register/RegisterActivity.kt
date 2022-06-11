@@ -1,9 +1,7 @@
 package com.capstone.anya.register
 
 import android.app.DatePickerDialog
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.util.Patterns
 import android.view.View
 import android.widget.ArrayAdapter
@@ -12,7 +10,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityRegisterBinding
-import com.capstone.anya.login.LoginActivity
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -73,8 +70,8 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         val passwordConfirm = registerBinding.konfirmasiPasswordEditTextRegister.text.toString()
         val address = registerBinding.tempatLahirEditText.text.toString()
         val date = registerBinding.dateText.text.toString()
-        var gender: String = registerBinding.genderTextView.text.toString()
 
+        var gender: String = registerBinding.genderTextView.text.toString()
         if(gender == "Laki-Laki"){
             gender = "M"
         }else if(gender == "Perempuan"){
@@ -110,7 +107,7 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
                 registerBinding.datePickerLayoutRegister.error = "Masukkan tanggal lahir"
             }
             gender.isEmpty() -> {
-                registerBinding.spinner.error = "Pilih jenis kelamin"
+                registerBinding.genderLayout.error = "Pilih jenis kelamin"
             }
             else -> {
                 registerViewModel.postRegister(name, email, password, passwordConfirm, address, date, gender)
@@ -125,7 +122,7 @@ class RegisterActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener
         registerBinding.konfirmasiPasswordEditTextLayoutRegister.isErrorEnabled = false
         registerBinding.tempatLahirEditTextLayoutRegister2.isErrorEnabled = false
         registerBinding.datePickerLayoutRegister.isErrorEnabled = false
-        registerBinding.spinner.isErrorEnabled = false
+        registerBinding.genderLayout.isErrorEnabled = false
     }
 
     private fun setDatePicker() {

@@ -24,14 +24,6 @@ data class ResponseRegister(
 ) : Parcelable
 
 @Parcelize
-data class ResponseChildList(
-
-	@field:SerializedName("ResponseChildList")
-	val responseChildList: List<ResponseChildListItem>
-
-) : Parcelable
-
-@Parcelize
 data class ResponseChildListItem(
 
 	@field:SerializedName("tempatLahir")
@@ -39,6 +31,9 @@ data class ResponseChildListItem(
 
 	@field:SerializedName("id")
 	val id: Int,
+
+	@field:SerializedName("jenisKelamin")
+	val jenisKelamin: String,
 
 	@field:SerializedName("tanggalLahir")
 	val tanggalLahir: String,
@@ -50,3 +45,31 @@ data class ResponseChildListItem(
 	val parentId: Int
 
 ) : Parcelable
+
+@Parcelize
+data class ResponseEducationItem(
+
+	@field:SerializedName("id")
+	val id: Int,
+
+	@field:SerializedName("author")
+	val author: String,
+
+	@field:SerializedName("title")
+	val title: String,
+
+	@field:SerializedName("desc")
+	val desc: String,
+
+	@field:SerializedName("urlToImage")
+	val urlToImage: String,
+
+	@field:SerializedName("content")
+	val content: String,
+
+	@field:SerializedName("publishedAt")
+	val publishedAt: String,
+
+) : Parcelable
+
+

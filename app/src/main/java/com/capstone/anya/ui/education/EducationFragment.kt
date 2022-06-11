@@ -4,17 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.capstone.anya.databinding.FragmentEducationBinding
+import com.capstone.anya.login.dataStore
+import com.capstone.anya.main.ViewModelFactory
+import com.capstone.anya.model.UserPreference
 
 class EducationFragment : Fragment() {
 
     private var _binding: FragmentEducationBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,21 +22,44 @@ class EducationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(EducationViewModel::class.java)
-
         _binding = FragmentEducationBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        return binding.root
+    }
 
-        val textView: TextView = binding.textEducation
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val educationViewModel = ViewModelProvider(
+            this,
+            ViewModelFactory(UserPreference.getInstance(requireContext().dataStore))
+        )[EducationViewModel::class.java]
+
+        val educationAdapter = EducationAdapter()
+
+        educationViewModel.isLoading.observe(viewLifecycleOwner) {
+            showLoading(it)
         }
-        return root
+
+        educationViewModel.getToken().observe(viewLifecycleOwner) {
+            educationViewModel.getEducation(it.token.toString())
+        }
+
+        educationViewModel.educationList.observe(viewLifecycleOwner) {
+            educationAdapter.setEducation(it)
+            binding.rvEducation.apply {
+                adapter = educationAdapter
+                layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+                setHasFixedSize(true)
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }

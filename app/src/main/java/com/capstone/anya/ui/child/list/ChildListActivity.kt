@@ -68,7 +68,9 @@ class ChildListActivity : AppCompatActivity() {
             setupChild(it)
         }
 
-        childListViewModel.getChildList()
+        childListViewModel.getToken().observe(this) {
+            childListViewModel.getChildList(it.token.toString())
+        }
     }
 
     private fun setupLayoutManager(){

@@ -30,7 +30,8 @@ interface ApiService {
         @Header("auth")auth:String,
         @Field("namaLengkap") name: String,
         @Field("tempatLahir") address: String,
-        @Field("tanggalLahir") date: String
+        @Field("tanggalLahir") date: String,
+        @Field("jenisKelamin") gender: String
     ): Call<ResponseRegister>
 
     @GET("anak")
@@ -43,5 +44,10 @@ interface ApiService {
         @Header("auth") auth:String,
         @Path("id") id: Int
     ): Call<List<ResponseChildListItem>>
+
+    @GET("education")
+    fun education(
+        @Header("auth") auth:String
+    ): Call<List<ResponseEducationItem>>
 
 }

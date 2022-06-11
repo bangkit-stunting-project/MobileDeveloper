@@ -2,11 +2,12 @@ package com.capstone.anya.ui.child.input
 
 import android.app.DatePickerDialog
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.DatePicker
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -76,6 +77,10 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
     }
 
     private fun setupAction() {
+        val jkText =  resources.getStringArray(R.array.kelamin_array)
+        val arrayAdapter = ArrayAdapter(this, R.layout.dropdown_menu, jkText)
+        bindingInputAnak.genderTextView.setAdapter(arrayAdapter)
+
         bindingInputAnak.dateText.setOnClickListener {
             setDatePicker()
         }
@@ -94,26 +99,36 @@ class InputAnakActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
         bindingInputAnak.tempatLahirEditTextLayoutInputAnak.isErrorEnabled = false
         bindingInputAnak.nameEditTextLayoutInputAnak.isErrorEnabled = false
         bindingInputAnak.datePickerLayout.isErrorEnabled = false
+        bindingInputAnak.genderLayout.isErrorEnabled = false
     }
-
-
 
     private fun inputAnakValidation(token:String){
         val nama = bindingInputAnak.nameEditTextInputAnak.text.toString()
         val tempatLahir = bindingInputAnak.tempatLahirEditTextInputAnak.text.toString()
         val tlAnak = bindingInputAnak.dateText.text.toString()
+
+        var tlGender = bindingInputAnak.genderTextView.text.toString()
+        if(tlGender == "Laki-Laki"){
+            tlGender = "M"
+        }else if(tlGender == "Perempuan"){
+            tlGender = "F"
+        }
+
         when {
             nama.isEmpty() -> {
-                bindingInputAnak.nameEditTextLayoutInputAnak.error = "Nama tidak boleh kosong"
+                bindingInputAnak.nameEditTextLayoutInputAnak.error = "Masukkan nama lengkap"
             }
             tempatLahir.isEmpty() -> {
-                bindingInputAnak.tempatLahirEditTextLayoutInputAnak.error = "Tempat Lahir tidak boleh kosong"
+                bindingInputAnak.tempatLahirEditTextLayoutInputAnak.error = "Masukkan tempat tinggal atau lahir"
             }
             tlAnak.isEmpty() -> {
-                bindingInputAnak.datePickerLayout.error = "Tanggal Lahir tidak boleh kosong"
+                bindingInputAnak.datePickerLayout.error = "Masukkan tanggal lahir"
+            }
+            tlGender.isEmpty() -> {
+                bindingInputAnak.datePickerLayout.error = "Pilih jenis kelamin"
             }
             else -> {
-                inputAnakViewModel.postRegisterAnak(token, nama, tempatLahir, tlAnak)
+                inputAnakViewModel.postRegisterChild(token, nama, tempatLahir, tlAnak, tlGender)
             }
         }
     }

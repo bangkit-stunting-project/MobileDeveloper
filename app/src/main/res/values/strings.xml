@@ -67,5 +67,6 @@
     <string name="text_history">Riwayat</string>
     <string name="text_diagnose">Tidak Stunting</string>
     <string name="text_title_diagnose">Diagnosa</string>
+    <string name="photo">Gambar</string>
 
 </resources>

@@ -1,13 +1,13 @@
 package com.capstone.anya.ui.child.list
 
-import android.graphics.Movie
 import android.util.Log
-import androidx.lifecycle.*
-import com.capstone.anya.api.ResponseChildList
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.capstone.anya.api.ResponseChildListItem
-import com.capstone.anya.api.ResponseRegister
+import com.capstone.anya.model.UserModel
 import com.capstone.anya.model.UserPreference
-import com.capstone.anya.repository.MainRepository
 import com.example.storyappsubmission.ApiConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,15 +15,18 @@ import retrofit2.Response
 
 class ChildListViewModel(private val pref: UserPreference) : ViewModel() {
 
+    fun getToken(): LiveData<UserModel> {
+        return pref.getToken().asLiveData()
+    }
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
     private val _childList = MutableLiveData<List<ResponseChildListItem>>()
     val childList: MutableLiveData<List<ResponseChildListItem>> = _childList
 
-    fun getChildList() {
+    fun getChildList(token: String) {
         _isLoading.value = true
-        val token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTIsImVtYWlsIjoidGVzdGluZ0BnbWFpbC5jb20iLCJpYXQiOjE2NTQ3MDY2NjAsImV4cCI6MTY1NzMxMzA2MH0.yP0kswSUVTRo47NCoQ3s9cZlSClhELxo05LoCBvzpog"
         val client = ApiConfig.getApiService().childList(token)
         Log.d(TAG, token)
         client.enqueue(object : Callback<List<ResponseChildListItem>> {
