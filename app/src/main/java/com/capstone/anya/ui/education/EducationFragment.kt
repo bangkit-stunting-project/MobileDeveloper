@@ -1,5 +1,6 @@
 package com.capstone.anya.ui.education
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.capstone.anya.api.ResponseEducationItem
 import com.capstone.anya.databinding.FragmentEducationBinding
 import com.capstone.anya.login.dataStore
 import com.capstone.anya.main.ViewModelFactory
@@ -40,10 +42,6 @@ class EducationFragment : Fragment() {
             showLoading(it)
         }
 
-        educationViewModel.getToken().observe(viewLifecycleOwner) {
-            educationViewModel.getEducation(it.token.toString())
-        }
-
         educationViewModel.educationList.observe(viewLifecycleOwner) {
             educationAdapter.setEducation(it)
             binding.rvEducation.apply {
@@ -51,6 +49,15 @@ class EducationFragment : Fragment() {
                 layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
                 setHasFixedSize(true)
             }
+            educationAdapter.setOnItemClickCallback(object : EducationAdapter.OnItemClickCallback {
+                override fun onItemClicked(data: ResponseEducationItem) {
+                    intentEducationDetail(data)
+                }
+            })
+        }
+
+        educationViewModel.getToken().observe(viewLifecycleOwner) {
+            educationViewModel.getEducation(it.token.toString())
         }
     }
 
@@ -61,5 +68,11 @@ class EducationFragment : Fragment() {
 
     private fun showLoading(isLoading: Boolean) {
         binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+    }
+
+    private fun intentEducationDetail(education: ResponseEducationItem) {
+        val educationDetailIntent = Intent(requireActivity(), EducationDetailActivity::class.java)
+        educationDetailIntent.putExtra(EducationDetailActivity.EXTRA_EDUCATION, education)
+        startActivity(educationDetailIntent)
     }
 }
