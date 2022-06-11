@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.anya.databinding.FragmentHomeBinding
 import com.capstone.anya.ui.child.list.ChildListActivity
+import com.capstone.anya.ui.mother.input.MotherInputActivity
 
 class HomeFragment : Fragment() {
 
@@ -34,6 +35,11 @@ class HomeFragment : Fragment() {
             val mIntent = Intent(requireActivity(), ChildListActivity::class.java)
             startActivity(mIntent)
 
+        }
+
+        binding.monMotherWidget.buttonBuatDataIbu.root.setOnClickListener {
+            val mIntent = Intent(requireActivity(), MotherInputActivity::class.java)
+            startActivity(mIntent)
         }
 
         return root

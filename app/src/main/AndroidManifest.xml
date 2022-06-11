@@ -22,6 +22,12 @@
         android:theme="@style/Theme.Anya"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.mother.monitoring.MotherMonitoringActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mother.input.MotherInputActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.child.input.StuntingInputActivity"
             android:exported="false" />
         <activity
