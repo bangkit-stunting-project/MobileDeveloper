@@ -60,6 +60,10 @@
             android:exported="false"
             android:parentActivityName=".main.MainActivity" />
         <activity
+            android:name=".ui.education.EducationDetailActivity"
+            android:exported="false"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
             android:name=".ui.child.monitoring.ChildMonitoringActivity"
             android:exported="false"
             android:parentActivityName=".main.MainActivity" />
