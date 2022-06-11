@@ -34,7 +34,9 @@ class ChildMonitoringActivity : AppCompatActivity() {
         @StringRes
         private val TAB_TITLES = intArrayOf(
             R.string.title_food,
-            R.string.title_stunting
+            R.string.title_Nutrition,
+            R.string.title_stunting,
+
         )
         const val EXTRA_CHILD = "extra_child"
 

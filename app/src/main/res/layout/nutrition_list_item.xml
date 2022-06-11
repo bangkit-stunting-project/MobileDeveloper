@@ -6,11 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:layout_marginLeft="8dp"
-    android:layout_marginTop="4dp"
-    android:layout_marginRight="8dp"
-    android:layout_marginBottom="4dp"
-    card_view:cardCornerRadius="4dp">
+    android:layout_marginBottom="2dp"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,53 +20,60 @@
             android:layout_height="wrap_content"
             android:textColor="@color/black"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/text_total"
             tools:text="Energi" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/text_total"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textColor="@color/black"-->
-<!--            tools:text="Total" />-->
+        <TextView
+            android:id="@+id/text_total"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:textColor="@color/black"
+            card_view:layout_constraintEnd_toStartOf="@+id/text_target"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:text="Total" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/text_target"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:textColor="@color/black"-->
+        <TextView
+            android:id="@+id/text_target"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:text="Target" />
 
-<!--            card_view:layout_constraintBottom_toTopOf="@+id/nutrition_minimum"-->
-<!--            tools:layout_editor_absoluteX="8dp"-->
-<!--            tools:text="Target" />-->
 
         <TextView
             android:id="@+id/nutrition_user"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="70dp"
-            card_view:layout_constraintBottom_toTopOf="@+id/textView2"
-            card_view:layout_constraintEnd_toStartOf="@+id/nutrition_minimum"
-            card_view:layout_constraintTop_toTopOf="parent"
+            android:textAlignment="center"
+            card_view:layout_constraintEnd_toEndOf="@+id/text_total"
+            card_view:layout_constraintStart_toStartOf="@+id/text_total"
+            card_view:layout_constraintTop_toBottomOf="@+id/text_total"
             tools:text="68" />
 
         <TextView
             android:id="@+id/nutrition_minimum"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            card_view:layout_constraintBottom_toTopOf="@+id/textView2"
+            android:textAlignment="center"
             card_view:layout_constraintEnd_toEndOf="parent"
-            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:layout_constraintStart_toStartOf="@+id/text_target"
+            card_view:layout_constraintTop_toBottomOf="@+id/text_target"
             tools:text="113" />
 
-
-        <TextView
+        <ProgressBar
             android:id="@+id/textView2"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border_black"
-            card_view:layout_constraintTop_toBottomOf="@+id/nutrition_name"
-            tools:layout_editor_absoluteX="8dp" />
+            android:layout_marginTop="8dp"
+            android:max="100"
+            android:progress="60"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/nutrition_name" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

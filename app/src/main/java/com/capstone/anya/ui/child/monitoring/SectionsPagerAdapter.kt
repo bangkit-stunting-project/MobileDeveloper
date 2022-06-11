@@ -13,8 +13,8 @@ class SectionsPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(a
         var fragment: Fragment? = null
         when (position) {
             0 -> fragment = FoodFragment()
-            1 -> fragment = StuntingFragment()
-            2 -> fragment = NutritionFragment()
+            1 -> fragment = NutritionFragment()
+            2 -> fragment = StuntingFragment()
         }
         return fragment as Fragment
     }
