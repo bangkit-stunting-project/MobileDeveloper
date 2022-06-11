@@ -2,8 +2,6 @@ package com.capstone.anya.ui.food
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.capstone.anya.R
-import com.capstone.anya.databinding.ActivityChildInputBinding
 import com.capstone.anya.databinding.ActivityFoodDetailBinding
 
 class FoodDetailActivity : AppCompatActivity() {
@@ -15,6 +13,5 @@ class FoodDetailActivity : AppCompatActivity() {
         foodDetailBinding = ActivityFoodDetailBinding.inflate(layoutInflater)
         setContentView(foodDetailBinding.root)
 
-       
     }
 }

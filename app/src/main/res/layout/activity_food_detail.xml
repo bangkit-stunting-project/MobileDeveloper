@@ -117,16 +117,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/food_data_detail" />
 
-    <Spinner
-        android:id="@+id/spinnerFoodDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/borderFoodDetailList1" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewFoodDetail"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
@@ -135,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/food_list_item"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerFoodDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/borderFoodDetailList1" />
 
     <Button
         android:id="@+id/buttonFoodDetail"
