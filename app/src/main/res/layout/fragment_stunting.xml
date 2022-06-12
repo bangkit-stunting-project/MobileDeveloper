@@ -142,21 +142,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title_age" />
 
-    <Button
-        android:id="@+id/btn_stunting_check"
-        android:layout_width="0dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:alpha="1"
-        android:backgroundTint="@color/pink"
-        android:text="@string/text_stunting_check"
-        android:textAllCaps="false"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 
     <TextView
         android:id="@+id/border2"
@@ -168,7 +153,7 @@
         android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_stunting_check" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 
     <TextView
         android:id="@+id/tv_history"
@@ -184,13 +169,28 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/food_history_item"
-        app:layout_constraintTop_toBottomOf="@+id/tv_history" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_history"
+        app:layout_constraintBottom_toTopOf="@id/btn_stunting_check"
+        tools:listitem="@layout/food_history_item" />
 
+    <Button
+        android:id="@+id/btn_stunting_check"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="1"
+        android:backgroundTint="@color/pink"
+        android:text="@string/text_stunting_check"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,6 +50,12 @@
     <string name="title_input_anak">Buat Anak</string>
     <string name="title_child_monitoring">Monitoring Anak</string>
     <string name="title_mother_monitoring">Monitoring Ibu</string>
+    <string name="title_education_detail">Detail Edukasi</string>
+    <string name="title_mother_register">Buat data ibu</string>
+
+
+    <string name="text_bulan_kehamilan">Bulan Kehamilan</string>
+    <string name="text_bulan_kelahiran">Bulan Kelahiran</string>
 
 
     <string name="text_stunting">Stunting</string>
@@ -69,5 +75,7 @@
     <string name="text_diagnose">Tidak Stunting</string>
     <string name="text_title_diagnose">Diagnosa</string>
     <string name="photo">Gambar</string>
+    <string name="education_description">Deskripsi artikel edukasi</string>
+    <string name="text_view_all">Lihat Semua</string>
 
 </resources>

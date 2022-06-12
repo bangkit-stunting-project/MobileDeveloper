@@ -1,4 +1,4 @@
-package com.capstone.anya.ui.education
+package com.capstone.anya.ui.home
 
 import android.os.Build
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ import com.capstone.anya.databinding.EducationItemBinding
 import com.capstone.anya.utils.formatDate
 import java.util.*
 
-class EducationAdapter: RecyclerView.Adapter<EducationAdapter.EducationViewHolder>() {
+class HomeEducationAdapter: RecyclerView.Adapter<HomeEducationAdapter.EducationViewHolder>() {
 
     private lateinit var onItemClickCallback: OnItemClickCallback
     private var educationList = mutableListOf<ResponseEducationItem>()
@@ -49,7 +49,7 @@ class EducationAdapter: RecyclerView.Adapter<EducationAdapter.EducationViewHolde
     }
 
     override fun getItemCount(): Int {
-        return educationList.size
+        return 4
     }
 
     interface OnItemClickCallback {
