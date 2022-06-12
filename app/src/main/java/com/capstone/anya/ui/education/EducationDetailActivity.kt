@@ -32,7 +32,7 @@ class EducationDetailActivity : AppCompatActivity() {
             binding.tvTitleEducation.text = educationDetail.title
             Glide.with(binding.photo)
                 .load(educationDetail.urlToImage)
-                .apply(RequestOptions.placeholderOf(R.drawable.ic_camera).error(R.drawable.ic_camera))
+                .apply(RequestOptions.placeholderOf(R.drawable.banner_anya_2).error(R.drawable.banner_anya_2))
                 .into(binding.photo)
             binding.tvChildDate.text = formatDate(educationDetail.publishedAt, TimeZone.getDefault().id)
             binding.tvDescription.text = educationDetail.content

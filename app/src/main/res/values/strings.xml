@@ -71,5 +71,6 @@
     <string name="text_title_diagnose">Diagnosa</string>
     <string name="photo">Gambar</string>
     <string name="education_description">Deskripsi artikel edukasi</string>
+    <string name="text_view_all">Lihat Semua</string>
 
 </resources>
