@@ -23,6 +23,12 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.buttonToProfileDetail.setOnClickListener {
+            val intent = Intent(activity, PersonalDataActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+
         binding.buttonLogout.setOnClickListener {
             val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)

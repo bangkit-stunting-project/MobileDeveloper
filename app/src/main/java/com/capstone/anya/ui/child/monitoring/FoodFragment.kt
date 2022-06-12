@@ -1,46 +1,40 @@
 package com.capstone.anya.ui.child.monitoring
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.capstone.anya.R
+import com.capstone.anya.databinding.FragmentFoodBinding
+import com.capstone.anya.ui.food.FoodOptionsActivity
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 class FoodFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentFoodBinding? = null
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_food, container, false)
+        _binding = FragmentFoodBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+
+        binding.btnAddFood.setOnClickListener {
+            val mIntent = Intent(requireActivity(), FoodOptionsActivity::class.java)
+            startActivity(mIntent)
+        }
+
+
+        return root
     }
 
-    companion object {
-
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FoodFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
