@@ -74,8 +74,6 @@ class HomeFragment : Fragment() {
             val mIntent = Intent(requireActivity(), MotherInputActivity::class.java)
             startActivity(mIntent)
         }
-
-        return root
     }
 
     override fun onDestroyView() {

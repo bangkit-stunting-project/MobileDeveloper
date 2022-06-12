@@ -1,15 +1,11 @@
 package com.capstone.anya.ui.child.monitoring
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.StringRes
-import androidx.viewpager2.widget.ViewPager2
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.anya.R
 import com.capstone.anya.databinding.ActivityChildMonitoringBinding
 import com.capstone.anya.ui.child.input.StuntingInputActivity
-import com.google.android.material.tabs.TabLayout
-import com.google.android.material.tabs.TabLayoutMediator
 
 class ChildMonitoringActivity : AppCompatActivity() {
 
@@ -21,7 +17,6 @@ class ChildMonitoringActivity : AppCompatActivity() {
         setContentView(bindingChildMonitoring.root)
 
         title = getString(R.string.title_child_monitoring)
-        supportActionBar?.elevation = 0f
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         bindingChildMonitoring.btnStuntingCheck.setOnClickListener {

@@ -1,8 +1,8 @@
 package com.capstone.anya.ui.mother.monitoring
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.StringRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.capstone.anya.R
 import com.capstone.anya.ui.child.monitoring.SectionsPagerAdapter
@@ -14,7 +14,7 @@ class MotherMonitoringActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mother_monitoring)
 
-        title = getString(R.string.title_child_monitoring)
+        title = getString(R.string.title_mother_monitoring)
         supportActionBar?.elevation = 0f
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
@@ -35,9 +35,7 @@ class MotherMonitoringActivity : AppCompatActivity() {
                 @StringRes
         private val TAB_TITLES = intArrayOf(
             R.string.title_food,
-            R.string.title_Nutrition,
-            R.string.title_stunting,
-
+            R.string.title_Nutrition
         )
     }
 }
