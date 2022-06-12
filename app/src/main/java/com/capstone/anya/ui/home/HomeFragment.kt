@@ -18,6 +18,7 @@ import com.capstone.anya.ui.child.list.ChildListActivity
 import com.capstone.anya.ui.education.EducationDetailActivity
 import com.capstone.anya.ui.education.EducationFragment
 import com.capstone.anya.ui.education.EducationViewModel
+import com.capstone.anya.ui.mother.input.MotherInputActivity
 
 class HomeFragment : Fragment() {
 
@@ -69,6 +70,12 @@ class HomeFragment : Fragment() {
         }
 
         setupAction()
+        binding.monMotherWidget.buttonBuatDataIbu.root.setOnClickListener {
+            val mIntent = Intent(requireActivity(), MotherInputActivity::class.java)
+            startActivity(mIntent)
+        }
+
+        return root
     }
 
     override fun onDestroyView() {
