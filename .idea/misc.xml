@@ -20,6 +20,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_child_input.xml" value="0.33" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_child_list.xml" value="0.5" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_child_monitoring.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_education_detail.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_food_detail.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_food_options.xml" value="0.13" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_food_search.xml" value="0.33" />
@@ -28,6 +29,8 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_list_anak.xml" value="0.1" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_mother_input.xml" value="0.22" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_mother_monitoring.xml" value="0.1933876811594203" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_personaldata.xml" value="0.22" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/activity_register2.xml" value="0.33" />
@@ -44,7 +47,7 @@
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_food.xml" value="0.33" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_home.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_list_anak.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_nutrition.xml" value="0.33" />
+        <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_nutrition.xml" value="0.22" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_profile.xml" value="0.33" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/fragment_stunting.xml" value="0.25" />
         <entry key="..\:/Users/ACER/AndroidStudioProjects/Capstone/MobileDeveloper/app/src/main/res/layout/mon_child_widget.xml" value="0.17074275362318841" />
